@@ -2,6 +2,8 @@
     ViewData["Title"] = "Quadrants";
 }
 
+@*@model List<Tasks>*@
+
 <h1>YOU ROCK</h1>
 
 <table class="table table-bordered table-striped">
@@ -33,3 +35,128 @@
     </tbody>*@
 
 </table>
+
+<div class="quadrant" id="quad1">
+    <h2>Quadrant 1</h2>
+    <table class="table table-bordered table-striped">
+
+        <thead class="font-weight-bold">
+            <tr>
+                <td>Task</td>
+                <td>Due Date</td>
+                <td>Category</td>
+                <td>Completed?</td>
+            </tr>
+        </thead>
+
+        @*<tbody>
+                @foreach (var x in Model)
+                {
+                    <tr>
+                        <td>@x.Category.CategoryName</td>
+                        <td>@x.Title</td>
+                        <td>@x.Year</td>
+                        <td>@x.Director</td>
+                        <td>@x.Rating</td>
+
+                        <td><a asp-controller="Home" asp-action="Edit" asp-route-movieID="@x.MovieID">Edit</a></td>
+                        <td><a asp-controller="Home" asp-action="Delete" asp-route-movieID="@x.MovieID">Delete</a></td>
+                    </tr>
+                }
+            </tbody>*@
+
+    </table>
+</div>
+<div class="quadrant" id="quad2">
+    <h2>Quadrant 2</h2>
+    <table class="table table-bordered table-striped">
+
+        <thead class="font-weight-bold">
+            <tr>
+                <td>Task</td>
+                <td>Due Date</td>
+                <td>Category</td>
+                <td>Completed?</td>
+            </tr>
+        </thead>
+
+        @*<tbody>
+                @foreach (var x in Model)
+                {
+                    <tr>
+                        <td>@x.Category.CategoryName</td>
+                        <td>@x.Title</td>
+                        <td>@x.Year</td>
+                        <td>@x.Director</td>
+                        <td>@x.Rating</td>
+
+                        <td><a asp-controller="Home" asp-action="Edit" asp-route-movieID="@x.MovieID">Edit</a></td>
+                        <td><a asp-controller="Home" asp-action="Delete" asp-route-movieID="@x.MovieID">Delete</a></td>
+                    </tr>
+                }
+            </tbody>*@
+
+    </table>
+</div>
+<div class="quadrant" id="quad3">
+    <h2>Quadrant 3</h2>
+    <table class="table table-bordered table-striped">
+
+        <thead class="font-weight-bold">
+            <tr>
+                <td>Task</td>
+                <td>Due Date</td>
+                <td>Category</td>
+                <td>Completed?</td>
+            </tr>
+        </thead>
+
+        @*<tbody>
+                @foreach (var x in Model)
+                {
+                    <tr>
+                        <td>@x.Category.CategoryName</td>
+                        <td>@x.Title</td>
+                        <td>@x.Year</td>
+                        <td>@x.Director</td>
+                        <td>@x.Rating</td>
+
+                        <td><a asp-controller="Home" asp-action="Edit" asp-route-movieID="@x.MovieID">Edit</a></td>
+                        <td><a asp-controller="Home" asp-action="Delete" asp-route-movieID="@x.MovieID">Delete</a></td>
+                    </tr>
+                }
+            </tbody>*@
+
+    </table>
+</div>
+<div class="quadrant" id="quad4">
+    <h2>Quadrant 4</h2>
+    <table class="table table-bordered table-striped">
+
+        <thead class="font-weight-bold">
+            <tr>
+                <td>Task</td>
+                <td>Due Date</td>
+                <td>Category</td>
+                <td>Completed?</td>
+            </tr>
+        </thead>
+
+        @*<tbody>
+                @foreach (var x in Model)
+                {
+                    <tr>
+                        <td>@x.Category.CategoryName</td>
+                        <td>@x.Title</td>
+                        <td>@x.Year</td>
+                        <td>@x.Director</td>
+                        <td>@x.Rating</td>
+
+                        <td><a asp-controller="Home" asp-action="Edit" asp-route-movieID="@x.MovieID">Edit</a></td>
+                        <td><a asp-controller="Home" asp-action="Delete" asp-route-movieID="@x.MovieID">Delete</a></td>
+                    </tr>
+                }
+            </tbody>*@
+
+    </table>
+</div>
