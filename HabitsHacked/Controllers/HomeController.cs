@@ -24,6 +24,11 @@ namespace HabitsHacked.Controllers
             return View();
         }
 
+        public IActionResult Quadrants()
+        {
+            return View();
+        }
+
         ////Create Task controllers
         //[HttpGet]
         //public IActionResult CreateTask()
