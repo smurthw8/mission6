@@ -29,7 +29,7 @@ namespace HabitsHacked
 
             services.AddDbContext<TaskInfoContext>(options =>
             {
-                options.UseSqlite(Configuration["ConnectionString:TaskConnection"]);
+                options.UseSqlite(Configuration["ConnectionStrings:TaskConnection"]);
             });
         }
 
