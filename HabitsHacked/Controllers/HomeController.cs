@@ -3,20 +3,20 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using HabitsHacked.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-//using HabitsHacked.Models;
 
 namespace HabitsHacked.Controllers
 {
     public class HomeController : Controller
     {
         //controller to pass data to database 
-        //private HabitsContext _habitAdder { get; set; }
+        private TaskInfoContext _habitAdder { get; set; }
 
-        public HomeController()//HabitsContext variable)
+        public HomeController(TaskInfoContext variable)
         {
-            //_habitAdder = variable;
+            _habitAdder = variable;
         }
 
         public IActionResult Index()
