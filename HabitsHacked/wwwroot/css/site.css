@@ -70,25 +70,3 @@ body {
   line-height: 60px; /* Vertically center the text there */
 }
 
-div.quadrant {
-    width: 50%;
-    height: 50%;
-    float: left;
-    text-align: center;
-}
-/*
-#quad1 {
-    background: #DDD;
-}
-
-#quad2 {
-    background: #AAA;
-}
-
-#quad3 {
-    background: #777
-}
-
-#quad4 {
-    background: #444;
-}*/
