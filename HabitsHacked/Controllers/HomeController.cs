@@ -66,15 +66,6 @@ namespace HabitsHacked.Controllers
         //    }
         //}
 
-        ////Quadrant View
-        //public IActionResult Quadrant()
-        //{
-        //    var alltasks = _habitAdder.TaskResponses
-        //        .Include(x => x.Category)
-        //        .ToList();
-
-        //    return View(alltasks);
-        //}
 
         ////EDIT page controllers
         //[HttpPost]
