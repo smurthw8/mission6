@@ -21,7 +21,7 @@ namespace HabitsHacked.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return RedirectToAction("Quadrants");
         }
 
         public IActionResult Quadrants()
@@ -29,19 +29,19 @@ namespace HabitsHacked.Controllers
             return View();
         }
 
-        ////Create Task controllers
-        //[HttpGet]
-        //public IActionResult CreateTask()
-        //{
-        //    //may need to pass Categories to view for display dynamic list
-        //    ViewBag.Categories = _habitAdder.Categories.ToList();
+        //Create Task controllers
+        [HttpGet]
+        public IActionResult addtask()
+        {
+            //may need to pass Categories to view for display dynamic list
+            //ViewBag.Categories = _habitAdder.Categories.ToList();
 
-        //    return View();
-        //}
+            return View();
+        }
 
         //[HttpPost]
         ////cr = what being passed from the form
-        //public IActionResult CreateTask(ModelName cr)
+        //public IActionResult addtask(ModelName cr)
         //{
         //    ViewBag.Categories = _habitAdder.Categories.ToList();
 
