@@ -21,7 +21,7 @@ namespace HabitsHacked.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return RedirectToAction("Quadrants");
         }
 
         public IActionResult Quadrants()
@@ -39,27 +39,27 @@ namespace HabitsHacked.Controllers
             return View();
         }
 
-        [HttpPost]
-        //cr = what being passed from the form
-        public IActionResult addtask(TaskFormResponse tfr)
-        {
-            //ViewBag.Categories = _habitAdder.Categories.ToList();
+        //[HttpPost]
+        ////cr = what being passed from the form
+        //public IActionResult addtask(ModelName cr)
+        //{
+        //    ViewBag.Categories = _habitAdder.Categories.ToList();
 
-            //not sure if we need validation - can delete if we don't want to use, just keep the return statement
-            if (ModelState.IsValid)
-            {
-                //get data from form
-                _habitAdder.Add(tfr);
-                //save changes
-                _habitAdder.SaveChanges();
+        //    //not sure if we need validation - can delete if we don't want to use, just keep the return statement
+        //    if (ModelState.IsValid)
+        //    {
+        //        //get data from form
+        //        _habitAdder.Add(cr);
+        //        //save changes
+        //        _habitAdder.SaveChanges();
 
-                return RedirectToAction("Quadrants");
-            }
-            else //if data doesn't meet requirements
-            {
-                return View(tfr);
-            }
-        }
+        //        return RedirectToAction("Quadrant");
+        //    }
+        //    else //if data doesn't meet requirements
+        //    {
+        //        return View(cr);
+        //    }
+        //}
 
         ////Quadrant View
         //public IActionResult Quadrant()
