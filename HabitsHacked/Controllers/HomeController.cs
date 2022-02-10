@@ -102,24 +102,24 @@ namespace HabitsHacked.Controllers
         //    return View("CreateTask", task);
         //}
 
-        ////DELETE page controllers
-        //[HttpGet]
-        //public IActionResult Delete(int filmid)
-        //{
-        //    var task = _habitAdder.ModelName.Single(x => x.TaskId == taskid);
+        //DELETE page controllers
+        [HttpGet]
+        public IActionResult Delete(int taskid)
+        {
+            var task = _habitAdder.TaskResponses.Single(x => x.TaskID == taskid);
 
-        //    return View(task);
-        //}
+            return View(task);
+        }
 
-        //[HttpPost]
-        ////pass in model feilds for specific row > need to pass in Id as hidden feild on delete page
-        //public IActionResult Delete(ModelName cr)
-        //{
-        //    _habitAdder.Films.Remove(cr);
-        //    _habitAdder.SaveChanges();
+        [HttpPost]
+        //pass in model feilds for specific row > need to pass in Id as hidden feild on delete page
+        public IActionResult Delete(TaskFormResponse tfr)
+        {
+            _habitAdder.TaskResponses.Remove(tfr);
+            _habitAdder.SaveChanges();
 
-        //    return RedirectToAction("Quadrant");
-        //}
+            return RedirectToAction("Quadrants");
+        }
 
     }
 }
