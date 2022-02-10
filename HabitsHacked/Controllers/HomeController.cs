@@ -5,7 +5,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using HabitsHacked.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
 namespace HabitsHacked.Controllers
@@ -25,79 +24,83 @@ namespace HabitsHacked.Controllers
             return RedirectToAction("Quadrants");
         }
 
+        public IActionResult Quadrants()
+        {
+            return View();
+        }
+
         //Create Task controllers
         [HttpGet]
         public IActionResult addtask()
         {
             //may need to pass Categories to view for display dynamic list
-            ViewBag.Category = _habitAdder.Categories.ToList();
+            //ViewBag.Categories = _habitAdder.Categories.ToList();
 
             return View();
         }
 
-        [HttpPost]
-        //cr = what being passed from the form
-        public IActionResult addtask(TaskFormResponse tfr)
-        {
+        //[HttpPost]
+        ////cr = what being passed from the form
+        //public IActionResult addtask(ModelName cr)
+        //{
+        //    ViewBag.Categories = _habitAdder.Categories.ToList();
 
-            //not sure if we need validation - can delete if we don't want to use, just keep the return statement
-            if (ModelState.IsValid)
-            {
-                //get data from form
-                _habitAdder.Add(tfr);
-                //save changes
-                _habitAdder.SaveChanges();
+        //    //not sure if we need validation - can delete if we don't want to use, just keep the return statement
+        //    if (ModelState.IsValid)
+        //    {
+        //        //get data from form
+        //        _habitAdder.Add(cr);
+        //        //save changes
+        //        _habitAdder.SaveChanges();
 
-                return RedirectToAction("Quadrants");
-            }
-            else //if data doesn't meet requirements
-            {
-                ViewBag.Category = _habitAdder.Categories.ToList();
-                return View(tfr);
-            }
-        }
+        //        return RedirectToAction("Quadrant");
+        //    }
+        //    else //if data doesn't meet requirements
+        //    {
+        //        return View(cr);
+        //    }
+        //}
 
-        //Quadrant View
-        [HttpGet]
-        public IActionResult Quadrants()
-        {
-            var alltasks = _habitAdder.TaskResponses
-                .Include(x => x.Category)
-                .ToList();
+        ////Quadrant View
+        //public IActionResult Quadrant()
+        //{
+        //    var alltasks = _habitAdder.TaskResponses
+        //        .Include(x => x.Category)
+        //        .ToList();
 
-            return View(alltasks);
-        }
+        //    return View(alltasks);
+        //}
 
-        //EDIT page controllers
-        [HttpPost]
-        public IActionResult Edit(TaskFormResponse tfr)
-        {
-            if (ModelState.IsValid)
-            {
-                _habitAdder.Update(tfr);
-                _habitAdder.SaveChanges();
+        ////EDIT page controllers
+        //[HttpPost]
+        //public IActionResult Edit(ModelName cr)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        _habitAdder.Update(cr);
+        //        _habitAdder.SaveChanges();
 
-                //need to redirecttoaction, or pass in all Film Collection data again
-                return RedirectToAction("Quadrants");
-            }
-            else
-            {
-                return View(tfr);
-            }
+        //        //need to redirecttoaction, or pass in all Film Collection data again
+        //        return RedirectToAction("Quadrant");
+        //    }
+        //    else
+        //    {
+        //        return View(cr);
+        //    }
 
-        }
+        //}
 
-        [HttpGet]
-        public IActionResult Edit(int taskid)
-        {
-            ViewBag.Categories = _habitAdder.Categories.ToList();
+        //[HttpGet]
+        //public IActionResult Edit(int taskid)
+        //{
+        //    ViewBag.Categories = _habitAdder.Categories.ToList();
 
-            //ToString pull record using Find (then do itar by ID), or Single (expects criteria to find 1 entry)
-            var task = _habitAdder.TaskResponses.Single(x => x.TaskID == taskid);
+        //    //ToString pull record using Find (then do itar by ID), or Single (expects criteria to find 1 entry)
+        //    var task = _habitAdder.ModelName.Single(x => x.TaskId == taskid);
 
-            //let me know if want to edit in new view, or if CreateTaskView
-            return View("addtask", task);
-        }
+        //    //let me know if want to edit in new view, or if CreateTaskView
+        //    return View("CreateTask", task);
+        //}
 
         //DELETE page controllers
         [HttpGet]
