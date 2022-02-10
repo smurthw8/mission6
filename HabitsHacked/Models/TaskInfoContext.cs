@@ -17,7 +17,7 @@ namespace HabitsHacked.Models
         public DbSet<TaskFormResponse> TaskResponses { get; set; }
         public DbSet<Category> Categories { get; set; }
 
-        protected void OnModelCreate(ModelBuilder mb)
+        protected override void OnModelCreating(ModelBuilder mb)
         {
             mb.Entity<Category>().HasData(
                 new Category { CategoryID = 1, CategoryName = "Home" },
@@ -65,7 +65,7 @@ namespace HabitsHacked.Models
                 },
                 new TaskFormResponse
                 {
-                    TaskID = 4,
+                    TaskID = 5,
                     TaskName = "Weekly Work Meeting",
                     DueDate = DateTime.ParseExact("2022-02-11", "yyyy-MM-dd", null),
                     Quadrant = "Quadrant 2",
