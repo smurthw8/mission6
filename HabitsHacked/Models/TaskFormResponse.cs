@@ -13,10 +13,18 @@ namespace HabitsHacked.Models
         public int TaskID { get; set; }
         [Required]
         public string TaskName { get; set; }
-        public int DueDate { get; set; }
+
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        public DateTime DueDate { get; set; }
         [Required]
         public string Quadrant { get; set; }
-        public string TaskCategory { get; set; }
         public bool Completed { get; set; }
+
+        //build foriegn key relationship
+        public int CategoryID { get; set; }
+        public Category Category { get; set; }
+
+        
     }
 }
