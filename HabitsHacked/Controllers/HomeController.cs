@@ -86,17 +86,17 @@ namespace HabitsHacked.Controllers
 
         //}
 
-        //[HttpGet]
-        //public IActionResult Edit(int taskid)
-        //{
-        //    ViewBag.Categories = _habitAdder.Categories.ToList();
+        [HttpGet]
+        public IActionResult Edit(int movieID)
+        {
+            ViewBag.Categories = _habitAdder.Categories.ToList();
 
-        //    //ToString pull record using Find (then do itar by ID), or Single (expects criteria to find 1 entry)
-        //    var task = _habitAdder.ModelName.Single(x => x.TaskId == taskid);
+            //ToString pull record using Find (then do itar by ID), or Single (expects criteria to find 1 entry)
+            var task = _habitAdder.TaskResponses.Single(x => x.TaskID == movieID);
 
-        //    //let me know if want to edit in new view, or if CreateTaskView
-        //    return View("CreateTask", task);
-        //}
+            //let me know if want to edit in new view, or if CreateTaskView
+            return View("addtask", task);
+        }
 
         //DELETE page controllers
         [HttpGet]
