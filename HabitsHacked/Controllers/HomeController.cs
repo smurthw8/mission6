@@ -69,7 +69,7 @@ namespace HabitsHacked.Controllers
 
         //EDIT page controllers
         [HttpPost]
-        public IActionResult Edit(Category cr)
+        public IActionResult Edit(TaskFormResponse cr)
         {
             if (ModelState.IsValid)
             {
