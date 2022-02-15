@@ -58,7 +58,7 @@ namespace HabitsHacked.Controllers
                 //save changes
                 _habitAdder.SaveChanges();
 
-                return RedirectToAction("Quadrant");
+                return RedirectToAction("Quadrants");
             }
             else //if data doesn't meet requirements
             {
@@ -77,7 +77,7 @@ namespace HabitsHacked.Controllers
                 _habitAdder.SaveChanges();
 
                 //need to redirecttoaction, or pass in all Film Collection data again
-                return RedirectToAction("Quadrant");
+                return RedirectToAction("Quadrants");
             }
             else
             {
