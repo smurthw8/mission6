@@ -67,24 +67,24 @@ namespace HabitsHacked.Controllers
         //}
 
 
-        ////EDIT page controllers
-        //[HttpPost]
-        //public IActionResult Edit(ModelName cr)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        _habitAdder.Update(cr);
-        //        _habitAdder.SaveChanges();
+        //EDIT page controllers
+        [HttpPost]
+        public IActionResult Edit(Category cr)
+        {
+            if (ModelState.IsValid)
+            {
+                _habitAdder.Update(cr);
+                _habitAdder.SaveChanges();
 
-        //        //need to redirecttoaction, or pass in all Film Collection data again
-        //        return RedirectToAction("Quadrant");
-        //    }
-        //    else
-        //    {
-        //        return View(cr);
-        //    }
+                //need to redirecttoaction, or pass in all Film Collection data again
+                return RedirectToAction("Quadrant");
+            }
+            else
+            {
+                return View(cr);
+            }
 
-        //}
+        }
 
         [HttpGet]
         public IActionResult Edit(int movieID)
