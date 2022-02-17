@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using HabitsHacked.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
 namespace HabitsHacked.Controllers
@@ -24,9 +25,15 @@ namespace HabitsHacked.Controllers
             return RedirectToAction("Quadrants");
         }
 
+        //Quadrant View
         public IActionResult Quadrants()
         {
-            return View();
+            var alltasks = _habitAdder.TaskResponses
+                .Include(x => x.Category)
+                .Where( x=> x.Completed == false)
+                .ToList();
+
+            return View(alltasks);
         }
 
         //Create Task controllers
@@ -61,15 +68,6 @@ namespace HabitsHacked.Controllers
         //    }
         //}
 
-        ////Quadrant View
-        //public IActionResult Quadrant()
-        //{
-        //    var alltasks = _habitAdder.TaskResponses
-        //        .Include(x => x.Category)
-        //        .ToList();
-
-        //    return View(alltasks);
-        //}
 
         ////EDIT page controllers
         //[HttpPost]
